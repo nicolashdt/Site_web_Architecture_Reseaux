@@ -2,11 +2,128 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Configurer un serveur loué </title>
+    <title>Déployer un serveur cloud avec Vue.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Vue.js CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
+
 <body>
-    <h1>Sujet : Configurer un serveur loué (AWS, Azure, ...)</h1>
-    <p>Auteur : Vanessa	Noé	Andreï </p>
-    
+
+<div id="app">
+    <h1>{{ titre }}</h1>
+
+    <section v-for="section in sections" :key="section.id">
+        <h2>{{ section.titre }}</h2>
+
+        <p v-for="(paragraphe, index) in section.textes" :key="index">
+            {{ paragraphe }}
+        </p>
+
+        <ul v-if="section.liste">
+            <li v-for="(item, index) in section.liste" :key="index">
+                {{ item }}
+            </li>
+        </ul>
+
+        <pre v-if="section.code"><code>{{ section.code }}</code></pre>
+    </section>
+</div>
+
+<script>
+const { createApp } = Vue;
+
+createApp({
+    data() {
+        return {
+            titre: "Louer et mettre en place un serveur en ligne (AWS / Azure)",
+
+            sections: [
+                {
+                    id: 1,
+                    titre: "1. Qu’est-ce qu’un serveur cloud ?",
+                    textes: [
+                        "Un serveur cloud est une machine distante accessible via Internet.",
+                        "Des fournisseurs comme AWS ou Azure permettent de louer ces serveurs à la demande."
+                    ]
+                },
+                {
+                    id: 2,
+                    titre: "2. Choisir un fournisseur",
+                    textes: [
+                        "Plusieurs plateformes existent selon vos besoins."
+                    ],
+                    liste: [
+                        "AWS : leader du marché",
+                        "Azure : intégration Microsoft",
+                        "Google Cloud : orienté data"
+                    ]
+                },
+                {
+                    id: 3,
+                    titre: "3. Création du compte",
+                    textes: [
+                        "Vous devez créer un compte et fournir un moyen de paiement.",
+                        "La plupart des plateformes proposent un niveau gratuit."
+                    ]
+                },
+                {
+                    id: 4,
+                    titre: "4. Création de la machine virtuelle",
+                    textes: [
+                        "Sélectionnez une image système (Ubuntu est recommandé).",
+                        "Choisissez la taille du serveur et configurez le réseau."
+                    ],
+                    liste: [
+                        "Image Linux (Ubuntu)",
+                        "Taille CPU / RAM",
+                        "Ports 22, 80, 443",
+                        "Clé SSH"
+                    ]
+                },
+                {
+                    id: 5,
+                    titre: "5. Connexion au serveur",
+                    textes: [
+                        "La connexion se fait via SSH depuis votre terminal."
+                    ],
+                    code: "ssh utilisateur@IP_DU_SERVEUR"
+                },
+                {
+                    id: 6,
+                    titre: "6. Installation d’un serveur web",
+                    textes: [
+                        "Une fois connecté, vous pouvez installer Apache ou Nginx."
+                    ],
+                    code: "sudo apt update\nsudo apt install apache2"
+                },
+                {
+                    id: 7,
+                    titre: "7. Sécurité et maintenance",
+                    textes: [
+                        "La sécurité est un point essentiel dans le cloud."
+                    ],
+                    liste: [
+                        "Mises à jour régulières",
+                        "Accès SSH par clé",
+                        "Pare-feu",
+                        "Sauvegardes"
+                    ]
+                },
+                {
+                    id: 8,
+                    titre: "8. Coûts",
+                    textes: [
+                        "Le cloud est facturé à l’usage.",
+                        "Pensez à arrêter les serveurs inutilisés."
+                    ]
+                }
+            ]
+        };
+    }
+}).mount("#app");
+</script>
+
 </body>
 </html>
