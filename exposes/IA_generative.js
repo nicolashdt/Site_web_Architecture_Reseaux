@@ -7,7 +7,5 @@
 <body>
     <h1>Bienvenue sur mon site 🎉</h1>
     <p>Mon premier site web avec GitHub Pages.</p>
-    popopopopopopop
 </body>
 </html>
-ezfzefnzlekfzeklnfoezknfzeokfn
