@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Sujet : Coût écologique du numérique et des réseaux </h1>
-    <p>Auteur : Nour, Emma et Elise  </p>
+    <p>Auteur : Nour, Emma et Elise !  </p>
     
 </body>
 </html>
