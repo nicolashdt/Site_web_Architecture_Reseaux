@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon site GitHub</title>
+</head>
+<body>
+    <h1>Bienvenue sur mon site 🎉</h1>
+    <p>Mon premier site web avec GitHub Pages.</p>
+</body>
+</html>
